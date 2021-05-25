@@ -14,7 +14,8 @@ class ContinentController extends Controller
      */
     public function index()
     {
-        //
+        $continents = Continent::paginate(3);
+        return view('backoffice.continent.all', compact('continents'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ContinentController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class ContinentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+        ]);
+        $continent = new Continent();
+        $continent->nom = $request->nom;    
+        $continent->created_at = now();
+        $continent->updated_at=now();
+        $continent->save();
+        return redirect()->route('continents.index')->with('message','Vous avez bien ajouté un continent :'." ".  $continent->nom);
     }
 
     /**
@@ -46,7 +55,7 @@ class ContinentController extends Controller
      */
     public function show(Continent $continent)
     {
-        //
+        return view('backoffice.continent.read', compact('continent'));
     }
 
     /**
@@ -57,7 +66,7 @@ class ContinentController extends Controller
      */
     public function edit(Continent $continent)
     {
-        //
+        return view('backoffice.continent.edit', compact('continent'));
     }
 
     /**
@@ -69,7 +78,12 @@ class ContinentController extends Controller
      */
     public function update(Request $request, Continent $continent)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+        ]);
+        $continent = new Continent();
+        $continent->nom = $request->nom;    
+        $continent->updated_at=now();
     }
 
     /**
@@ -80,6 +94,7 @@ class ContinentController extends Controller
      */
     public function destroy(Continent $continent)
     {
-        //
+        $continent->delete();
+        return redirect()->back();
     }
 }
