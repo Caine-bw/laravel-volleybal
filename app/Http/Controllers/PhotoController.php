@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Joueur;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -27,7 +28,7 @@ class PhotoController extends Controller
     public function create()
     {   $joueurs= Joueur::all();
 
-        // return view ("backoffice.photo.create,compact("joueurs"));
+        return view ("backoffice.photo.create",compact("joueurs"));
     }
 
     /**
@@ -43,9 +44,13 @@ class PhotoController extends Controller
         ]);
         $photo = new Photo();
         $photo->pdp=$request->pdp;
+        $photo->lien= $request->file("lien")->hasName();
+        $photo->joueur_id = $request->joueur_id;
         $photo->created_at = now();
-        $photo->updated_at=now();
+        $photo->updated_at = now();
+
         $photo->save();
+        $photo->file("lien")->storePublicly("img","public");
         return redirect()->route('photos.index')->with('message','Votre photo à bien été enregistré:'."". $photo->pdp);
 
     }
@@ -100,5 +105,10 @@ class PhotoController extends Controller
         $photo->delete();
         return redirect()->back();
     }
-
+    
+    public function download($id)
+    {
+        $photo= Photo::find($id);
+        return Storage::disk("public")->download("img/" . $photo->lien);
+    }
 }
