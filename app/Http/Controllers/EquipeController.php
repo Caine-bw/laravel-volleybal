@@ -86,6 +86,12 @@ class EquipeController extends Controller
      */
     public function update(Request $request, Equipe $equipe)
     {
+        $request->validate([
+            "nom"=>"required",
+            "ville"=>"required",
+            "pays"=>"required",
+            "continent_id"=>"required",
+        ]);
         
         $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;

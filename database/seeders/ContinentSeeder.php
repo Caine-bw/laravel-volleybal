@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ContinentSeeder extends Seeder
 {
@@ -13,6 +14,13 @@ class ContinentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('continents')->insert([
+            'nom' => 'Europe'
+            ]
+        );
+        DB::table('continents')->insert([
+            'nom' => 'Afrique'
+            ]
+        );
     }
 }
