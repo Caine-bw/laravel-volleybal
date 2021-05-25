@@ -36,11 +36,20 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "nom"=>"required",
+            "ville"=>"required",
+            "pays"=>"required",
+            "continent_id"=>"required",
+        ]);
+
         $equipe= new Equipe;
-        $equipe->name = $request->name;
+        $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
-
+        $equipe->continent_id =$request->continent_id;
+        $equipe->created_at = now();
+        $equipe->updated_at = now();
         $equipe->save();
         
         return redirect()->route('equipes.index')->with('message','Vous avez bien créée une nouvelle équipe :'." ".  $equipe->nom);
@@ -54,7 +63,7 @@ class EquipeController extends Controller
      */
     public function show(Equipe $equipe)
     {
-        return view("backoffice.equipe.show",compact("equipe"));
+        return view("backoffice.equipe.read",compact("equipe"));
     }
 
     /**
@@ -77,13 +86,15 @@ class EquipeController extends Controller
      */
     public function update(Request $request, Equipe $equipe)
     {
-        $equipe->name = $request->name;
+        
+        $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
-
+        $equipe->continent_id =$request->continent_id;
+        $equipe->updated_at = now();    
         $equipe->save();
 
-        return redirect()->routed("equipe.index");
+        return redirect()->route("equipes.index")->with('message','Vous avez bien mis a jour l"equipe :' . $equipe->nom);
     }
 
     /**
