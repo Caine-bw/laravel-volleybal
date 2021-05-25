@@ -14,7 +14,8 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        //
+        $equipes = Equipe::paginate(3);
+        return view('backoffice.equipe.all',compact('equipes'));
     }
 
     /**
@@ -24,7 +25,7 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.create');
     }
 
     /**
@@ -35,7 +36,14 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipe= new Equipe;
+        $equipe->nom = $request->nom;
+        $equipe->ville = $request->ville;
+        $equipe->pays = $request->pays;
+
+        $equipe->save();
+        
+        return redirect()->route('equipes.index')->with('message','Vous avez bien créée une nouvelle équipe :'." ".  $equipe->nom);
     }
 
     /**
@@ -46,7 +54,7 @@ class EquipeController extends Controller
      */
     public function show(Equipe $equipe)
     {
-        //
+        return view("backoffice.equipe.show",compact("equipe"));
     }
 
     /**
@@ -57,7 +65,7 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        //
+        return view("backoffice.equipe.edit",compact("equipe"));
     }
 
     /**
@@ -69,7 +77,10 @@ class EquipeController extends Controller
      */
     public function update(Request $request, Equipe $equipe)
     {
-        //
+        $equipe->nom = $request->nom;
+        $equipe->ville = $request->ville;
+        $equipe->pays = $request->pays;
+        
     }
 
     /**
