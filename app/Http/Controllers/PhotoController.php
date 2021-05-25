@@ -86,12 +86,20 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-       $request->validate([
-           'pdp' =>'required',
-    ]);
-        $photo= new Photo();
         $photo->pdp = $request->pdp;
-        $request->update_at=now();
+        if($request->file("lien") !==null){
+            Storage::disk("public")->delete("img/". $photo->lien);
+            $photo->lien = $request->file("lien")->hasName();
+            $request->file("lien")->storePublicly("img", "public");
+            
+            $photo->pdp = $request->pdp;
+            $photo->joueur_id - $request->joueur_id;
+            $photo->update_at= now();
+            
+            $photo->save();
+
+            return redirect()->route("photo.index");
+        }
     }
 
     /**
@@ -102,8 +110,10 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        $photo->delete();
-        return redirect()->back();
+       Storage::disk("public")->delete("img/" . $photo->lien);
+       $photo->delete();
+
+       return redirect()->back();
     }
     
     public function download($id)

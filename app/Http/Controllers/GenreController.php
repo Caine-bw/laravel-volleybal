@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Joueur;
 use Illuminate\Http\Request;
 use Mockery\Matcher\Type;
 
@@ -15,7 +16,8 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        $genre=Genre::paginate(2);
+        return view("backoffice.genre.all",compact("genres"));
     }
 
     /**
@@ -25,7 +27,8 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        $jouers= Joueur::all();
+        return view("backoffice.genre.create",compact("joueurs"));
     }
 
     /**
@@ -36,7 +39,10 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-    
+    $genre= new Genre;
+    $genre-> categorie = $request->categorie;
+    $genre-> joueur_id = $request->joueur_id;
+    $genre->created_at = now();
     }
 
     /**
@@ -47,7 +53,7 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        //
+        return view ("backoffice.genre.show",compact("genre"));
     }
 
     /**
@@ -58,7 +64,7 @@ class GenreController extends Controller
      */
     public function edit(Genre $genre)
     {
-        //
+        return view ("backoffice.genre.edit",compact("genre"));
     }
 
     /**
@@ -70,7 +76,8 @@ class GenreController extends Controller
      */
     public function update(Request $request, Genre $genre)
     {
-        //
+        $genre->categorie = $request->categorie;
+       
     }
 
     /**
