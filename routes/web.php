@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JoueurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Routes pour les joueurs 
+
+// Route::get('/,JoueurController@index')->name('joueur.index');
+// Route::get('/joueur-create', 'Joueur@create')->name("joueurs.create");
+// Route::get('/joueur-show', 'JoueurController@show')->name('joueurs.show');
+// Route::get('/joueur-edit','JoueurController@edit')->name('joueurs.edit');
+
+
+// Route genre

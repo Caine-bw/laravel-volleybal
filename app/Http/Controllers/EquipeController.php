@@ -37,7 +37,7 @@ class EquipeController extends Controller
     public function store(Request $request)
     {
         $equipe= new Equipe;
-        $equipe->nom = $request->nom;
+        $equipe->name = $request->name;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
 
@@ -77,10 +77,13 @@ class EquipeController extends Controller
      */
     public function update(Request $request, Equipe $equipe)
     {
-        $equipe->nom = $request->nom;
+        $equipe->name = $request->name;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
-        
+
+        $equipe->save();
+
+        return redirect()->routed("equipe.index");
     }
 
     /**
@@ -91,6 +94,7 @@ class EquipeController extends Controller
      */
     public function destroy(Equipe $equipe)
     {
-        //
+        $equipe->delete();
+        return redirect()->back();
     }
 }
