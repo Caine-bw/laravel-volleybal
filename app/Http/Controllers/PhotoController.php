@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Joueur;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Photo::paginate(2);
+        return view("backoffice.photo.all",compact("photos"));
     }
 
     /**
@@ -23,8 +25,9 @@ class PhotoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   $joueurs= Joueur::all();
+
+        // return view ("backoffice.photo.create,compact("joueurs"));
     }
 
     /**
@@ -35,9 +38,18 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'img'=>'required',
+        ]);
+        $photo = new Photo();
+        $photo->pdp=$request->pdp;
+        $photo->created_at = now();
+        $photo->updated_at=now();
+        $photo->save();
+        return redirect()->route('photos.index')->with('message','Votre photo à bien été enregistré:'."". $photo->pdp);
 
+    }
+      //// **COMMENTAIRE: J'ai pas mit de nom dans le request j'ai remplacé par pdp
     /**
      * Display the specified resource.
      *
@@ -46,7 +58,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        return view('backoffice.photo.read',compact('photo'));
     }
 
     /**
@@ -57,7 +69,7 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('backoffice.photo.edit',compact('photo'));
     }
 
     /**
@@ -69,7 +81,12 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        //
+       $request->validate([
+           'pdp' =>'required',
+    ]);
+        $photo= new Photo();
+        $photo->pdp = $request->pdp;
+        $request->update_at=now();
     }
 
     /**
@@ -80,6 +97,8 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        $photo->delete();
+        return redirect()->back();
     }
+
 }

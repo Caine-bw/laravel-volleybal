@@ -19,10 +19,6 @@ Route::get('/', function () {
 });
 // Routes pour les joueurs 
 
-// Route::get('/,JoueurController@index')->name('joueur.index');
-// Route::get('/joueur-create', 'Joueur@create')->name("joueurs.create");
-// Route::get('/joueur-show', 'JoueurController@show')->name('joueurs.show');
-// Route::get('/joueur-edit','JoueurController@edit')->name('joueurs.edit');
+Route::resources("joueurs",JoueurController::class);
+Route::post('/joueurs{id}/download',[JoueurController::class,'download']);
 
-
-// Route genre
