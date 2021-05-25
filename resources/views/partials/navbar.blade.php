@@ -1,0 +1,23 @@
+
+<div class="container my-4">
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link " href="/">Welcome</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link ">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link ">Caracteristiques</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link ">Portfolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">Galeries</a>
+        </li>
+    </ul>
+</div>
