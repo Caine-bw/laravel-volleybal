@@ -40,7 +40,7 @@ class GenreController extends Controller
     public function store(Request $request)
     {
     $genre= new Genre;
-    $genre-> categorie = $request->categorie;
+    $genre-> genre = $request->genre;
     $genre-> joueur_id = $request->joueur_id;
     $genre->created_at = now();
     }
@@ -76,7 +76,7 @@ class GenreController extends Controller
      */
     public function update(Request $request, Genre $genre)
     {
-        $genre->categorie = $request->categorie;
+        $genre->genre = $request->genre;
        
     }
 
