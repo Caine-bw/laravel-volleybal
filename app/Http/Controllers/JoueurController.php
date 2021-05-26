@@ -25,7 +25,7 @@ class JoueurController extends Controller
      */
     public function create()
     {
-        return view("backoffice.joueurs.create");
+        return view("backoffice.joueur.create");
     }
 
     /**
@@ -36,7 +36,7 @@ class JoueurController extends Controller
      */
     public function store(Request $request)
     {
-        return view("backoffice.joueur.create");
+        return view("backoffice.joueur.store");
     }
     /**
      * Display the specified resource.
