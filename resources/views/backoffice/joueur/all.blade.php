@@ -13,7 +13,7 @@
             <th scope="col">email</th>
             <th scope="col">tel</th>
             <th scope="col">age</th>
-            <th scope="col">categorie</th>
+            <th scope="col">genre</th>
             <th scope="col">pays</th>
             <th scope="col">equipe</th>
             <th scope="col">role</th>
@@ -21,24 +21,38 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+    @foreach ($joueurs as $joueur)
+    <tr>
+        <th scope="row">{{ $joueur->id }}</th>
+        <td>{{ $joueur->nom }}</td>
+        <td>{{ $joueur->prenom }}</td>
+        <td>
+            <div>
+                <a href=""></a>
+                <form action="">
+
+                </form>
+                    @srf
+                    @method("delete")
+                    <button class="btn btn-dark text-white mx-1" type>Delete</button>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+
+    @endforeach
+        
         </tbody>
       </table>
 </section>
