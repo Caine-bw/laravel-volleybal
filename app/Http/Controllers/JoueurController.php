@@ -70,6 +70,17 @@ class JoueurController extends Controller
     public function update(Request $request, Joueur $joueur)
     {
         $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->email = $request->email;
+        $joueur->age = $request->age;
+        $joueur->genre = $request->genre;
+        $joueur->role = $request->role;
+        $joueur->pays = $request->pays;
+        $joueur->updated_at = now();
+
+        $joueur->save();
+
+        return redirect()->route(("joueurs.index"));
     }
 
     /**
@@ -80,6 +91,7 @@ class JoueurController extends Controller
      */
     public function destroy(Joueur $joueur)
     {
-        //
+        $joueur->delete();
+        return redirect()->back();
     }
 }
