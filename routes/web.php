@@ -21,5 +21,3 @@ Route::get('/', function () {
 // Routes pour les joueurs 
 
 Route::resource("/joueurs",JoueurController::class);
-Route::resources("photos", PhotoController::class);
-Route::post("/photo/{id}/download",[PhotoController::class,"download"]);
