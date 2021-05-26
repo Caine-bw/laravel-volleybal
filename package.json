@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.9.2",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "metro4": "^4.4.3"
     }
 }

@@ -53,4 +53,7 @@
         </tbody>
       </table>
 </section>
+<div>
+  {{ $joueurs->links() }}
+</div>
 @endsection

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
+use App\Models\Genre;
 use App\Models\Joueur;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class JoueurController extends Controller
@@ -15,7 +17,7 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        $joueurs = Joueur::all();
+        $joueurs = Joueur::paginate(7);
         $equipes = Equipe::all();
         return view("backoffice.joueur.all",compact("joueurs", "equipes"));
     }
@@ -59,7 +61,10 @@ class JoueurController extends Controller
      */
     public function edit(Joueur $joueur)
     {
-        return view("backoffice.joueur.edit",compact("joueur"));
+        $genres = Genre::all();
+        $equipes = Equipe::all();
+        $roles = Role::all();
+        return view("backoffice.joueur.edit",compact("joueur", "genres", "equipes", "roles"));
     }
 
     /**
