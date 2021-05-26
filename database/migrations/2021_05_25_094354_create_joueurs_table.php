@@ -20,7 +20,6 @@ class CreateJoueursTable extends Migration
             $table->Integer('age');
             $table->bigInteger('numero');
             $table->string('pays');
-            $table->foreignId('photo_id')->nullable()->constrained('photos')->on('joueurs')->onDelete('cascade');
             $table->foreignId('genre_id')->constrained('genres');
             $table->foreignId('role_id')->constrained('roles');
             $table->foreignId('equipe_id')->nullable()->constrained('equipes')->on('joueurs')->onDelete('cascade');
