@@ -56,4 +56,7 @@
 <div>
   {{ $joueurs->links() }}
 </div>
+  <div class="d-flex justify-content-end me-2 ">
+     <a href={{ route("joueurs.create") }} class=" btn btn-sm btn-secondary text-white"><i class="fas fa-user-plus"></i></a>
+  </div>
 @endsection
