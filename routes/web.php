@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 // Routes pour les joueurs 
 
-Route::resources("joueurs",JoueurController::class);
+Route::resource("joueurs",JoueurController::class);
 Route::post('/joueurs{id}/download',[JoueurController::class,'download']);
 
