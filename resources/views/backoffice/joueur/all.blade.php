@@ -35,9 +35,9 @@
         <td></td>
         <td>
             <div class="d-flex">
-                <a class="btn btn-dark text-white" href={{ route("joueur.show", $joueur->id) }}>Show</a>
-                <a class="btn btn-dark text-white" href={{ route("joueur.edit", $joueur->id) }}>Edit</a>
-                <form action="{{ route("joueur.destroy",$joueur->id) }}" method="post">
+                <a class="btn btn-dark text-white" href={{ route("joueurs.show", $joueur->id) }}>Show</a>
+                <a class="btn btn-dark text-white" href={{ route("joueurs.edit", $joueur->id) }}>Edit</a>
+                <form action="{{ route("joueurs.destroy",$joueur->id) }}" method="post">
                   @srf
                   @method("delete")
                     <button class="btn btn-dark text-white mx-1" type>Delete</button>
