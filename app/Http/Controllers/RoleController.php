@@ -14,7 +14,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        
+        $roles= Role::paginate(2);
+        return view("backoffice.role.all",compact("roles"));
     }
 
     /**
@@ -24,7 +25,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $roles= Role::all();
+        return view("backoffice.role.create",compact("roles"));
     }
 
     /**
@@ -35,7 +37,14 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = new Role;
+        $role->nom = $request->nom;
+        $role->joueur_id= $request->joueur_id;
+        $role->created_at = now();
+
+        $role->save();
+        
+        return redirect()->route("roles.index");
     }
 
     /**
@@ -46,7 +55,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view("backoffice.role.read",compact("role"));
     }
 
     /**
@@ -57,7 +66,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view("backoffice.role.edit",compact("role"));
     }
 
     /**
@@ -69,7 +78,17 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $request->validate([
+            "nom"=>"required",
+        ]);
+
+        $role->nom = $request->nom;
+        $role->joueur_id = $request->joueur_id;
+        $role->role_id = $request->role_id;
+        $role->updated_at = now( );
+        $role->save();
+
+        return redirect()->route("role.index");
     }
 
     /**
@@ -80,6 +99,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return redirect()->back();
     }
 }

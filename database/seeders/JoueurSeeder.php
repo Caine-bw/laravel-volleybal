@@ -58,6 +58,7 @@ class JoueurSeeder extends Seeder
             'pays' => 'Maroc',
             'genre_id' => 1,
             'role_id' => 3,
+            'equipe_id' => 3,
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Gangsta',

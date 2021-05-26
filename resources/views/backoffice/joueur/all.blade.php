@@ -29,16 +29,17 @@
         <td>{{ $joueur->email }}</td>
         <td>{{ $joueur->numero }}</td>
         <td>{{ $joueur->age }}</td>
-        <td>{{ $joueur->role_id }}</td>
         <td>{{ $joueur->genre_id }}</td>
         <td>{{ $joueur->pays }}</td>
+        <td>{{ $joueur->equipe}}</td>
+        <td>{{ $joueur->role -> nom }}</td>
         <td></td>
         <td>
             <div class="d-flex">
                 <a class="btn btn-dark text-white" href={{ route("joueurs.show", $joueur->id) }}>Show</a>
                 <a class="btn btn-dark text-white" href={{ route("joueurs.edit", $joueur->id) }}>Edit</a>
                 <form action="{{ route("joueurs.destroy",$joueur->id) }}" method="post">
-                  @srf
+                  @csrf
                   @method("delete")
                     <button class="btn btn-dark text-white mx-1" type>Delete</button>
                 </form>
