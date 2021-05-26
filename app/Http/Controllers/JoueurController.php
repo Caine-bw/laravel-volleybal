@@ -73,8 +73,8 @@ class JoueurController extends Controller
         $joueur->prenom = $request->prenom;
         $joueur->email = $request->email;
         $joueur->age = $request->age;
-        $joueur->genre = $request->genre;
-        $joueur->role = $request->role;
+        $joueur->genre_id = $request->genre_id;
+        $joueur->role_id = $request->role_id;
         $joueur->pays = $request->pays;
         $joueur->updated_at = now();
 

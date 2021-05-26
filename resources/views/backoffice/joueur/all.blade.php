@@ -13,7 +13,7 @@
             <th scope="col">email</th>
             <th scope="col">numero</th>
             <th scope="col">age</th>
-            <th scope="col">genre</th>
+            <th scope="col">genre_id</th>
             <th scope="col">pays</th>
             <th scope="col">equipe</th>
             <th scope="col">role</th>
@@ -29,7 +29,8 @@
         <td>{{ $joueur->email }}</td>
         <td>{{ $joueur->numero }}</td>
         <td>{{ $joueur->age }}</td>
-        <td>{{ $joueur->genre }}</td>
+        <td>{{ $joueur->role_id }}</td>
+        <td>{{ $joueur->genre_id }}</td>
         <td>{{ $joueur->pays }}</td>
         <td></td>
         <td>
