@@ -8,16 +8,7 @@
             <a class="nav-link" href="/joueurs">Joueurs</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link ">Services</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ">Caracteristiques</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ">Portfolio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">Galeries</a>
+            <a class="nav-link" href="/equipes">Equipes</a>
         </li>
     </ul>
 </div>
