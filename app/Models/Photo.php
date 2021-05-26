@@ -9,7 +9,9 @@ class Photo extends Model
 {
     use HasFactory;
 
-    public function genre() {
-        return $this->hasOne(Genre::class);
+    protected $table = 'photos';
+
+    public function joueurs() {
+        return $this->hasOne(Joueur::class);
     }
 }

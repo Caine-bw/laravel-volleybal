@@ -9,6 +9,8 @@ class Genre extends Model
 {
     use HasFactory;
 
+    protected $table = 'genres';
+
     public function joueurs () {
         return $this->hasMany(Joueur::class);
     }

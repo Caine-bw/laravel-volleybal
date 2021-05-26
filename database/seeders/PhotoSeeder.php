@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PhotoSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class PhotoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table("photos")->insert([
+            'image'=>'une image ici'
+        ]);
     }
 }

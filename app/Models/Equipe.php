@@ -8,6 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Equipe extends Model
 {
     use HasFactory;
+
+    protected $table = 'equipes';
+
+    protected $fillable = [
+        'nom',
+        'ville',
+        'pays',
+        'max',
+        'ATT',
+        'CT',
+        'DC',
+        'RP',
+        'continent_id',
+    ];
     
     public function continent() {
         return $this->belongsTo(Continent::class);

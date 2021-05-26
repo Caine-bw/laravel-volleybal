@@ -9,6 +9,8 @@ class Joueur extends Model
 {
     use HasFactory;
 
+    protected $table = 'joueurs';
+
     public function photo() {
         return $this->belongsTo(Photo::class);
 
