@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\JoueurController;
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::get('/', function () {
 // Routes pour les joueurs 
 
 Route::resource("/joueurs",JoueurController::class);
+
+Route::resource("/equipes", EquipeController::class);

@@ -38,7 +38,7 @@
                 <a class="btn btn-dark text-white" href={{ route("joueurs.show", $joueur->id) }}>Show</a>
                 <a class="btn btn-dark text-white" href={{ route("joueurs.edit", $joueur->id) }}>Edit</a>
                 <form action="{{ route("joueurs.destroy",$joueur->id) }}" method="post">
-                  @srf
+                  @csrf
                   @method("delete")
                     <button class="btn btn-dark text-white mx-1" type>Delete</button>
                 </form>
