@@ -11,6 +11,10 @@ class Genre extends Model
 
     protected $table = 'genres';
 
+    protected $fillable = [
+        'type',
+    ];
+    
     public function joueurs () {
         return $this->hasMany(Joueur::class);
     }
