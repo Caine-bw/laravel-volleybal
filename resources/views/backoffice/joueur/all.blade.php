@@ -11,13 +11,13 @@
             <th scope="col">nom</th>
             <th scope="col">prenom</th>
             <th scope="col">email</th>
-            <th scope="col">tel</th>
+            <th scope="col">numero</th>
             <th scope="col">age</th>
             <th scope="col">genre</th>
             <th scope="col">pays</th>
             <th scope="col">equipe</th>
             <th scope="col">role</th>
-            <th scope="col">continent</th>
+ 
           </tr>
         </thead>
         <tbody>
@@ -26,16 +26,22 @@
         <th scope="row">{{ $joueur->id }}</th>
         <td>{{ $joueur->nom }}</td>
         <td>{{ $joueur->prenom }}</td>
+        <td>{{ $joueur->email }}</td>
+        <td>{{ $joueur->numero }}</td>
+        <td>{{ $joueur->age }}</td>
+        <td>{{ $joueur->genre }}</td>
+        <td>{{ $joueur->pays }}</td>
+        <td></td>
         <td>
-            <div>
-                <a href=""></a>
-                <form action="">
-
-                </form>
-                    @srf
-                    @method("delete")
+            <div class="d-flex">
+                <a class="btn btn-dark text-white" href={{ route("joueur.show", $joueur->id) }}>Show</a>
+                <a class="btn btn-dark text-white" href={{ route("joueur.edit", $joueur->id) }}>Edit</a>
+                <form action="{{ route("joueur.destroy",$joueur->id) }}" method="post">
+                  @srf
+                  @method("delete")
                     <button class="btn btn-dark text-white mx-1" type>Delete</button>
-            </div>
+                </form>
+              </div>
         </td>
       </tr>
       <tr>

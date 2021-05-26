@@ -14,7 +14,8 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        //
+        $joueurs = Joueur::all();
+        return view("backoffice.joueur.all",compact("joueurs"));
     }
 
     /**
@@ -24,7 +25,7 @@ class JoueurController extends Controller
      */
     public function create()
     {
-        //
+        return view("backoffice.joueurs.create");
     }
 
     /**
@@ -35,9 +36,8 @@ class JoueurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view("backoffice.joueur.create");
     }
-
     /**
      * Display the specified resource.
      *
@@ -46,7 +46,7 @@ class JoueurController extends Controller
      */
     public function show(Joueur $joueur)
     {
-        //
+        return view ("backoffice.joueur.read",compact("joueur"));
     }
 
     /**
@@ -57,7 +57,7 @@ class JoueurController extends Controller
      */
     public function edit(Joueur $joueur)
     {
-        //
+        return view("backoffice.joueur.edit",compact("joueur"));
     }
 
     /**
@@ -69,7 +69,7 @@ class JoueurController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
-        //
+        $joueur->nom = $request->nom;
     }
 
     /**
