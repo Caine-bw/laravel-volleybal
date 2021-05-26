@@ -41,5 +41,12 @@ class EquipeSeeder extends Seeder
                 'continent_id' => '1'
     
             ]);
+
+            DB::table('equipes')->insert([
+                'nom' => 'Chomage',
+                'ville' => 'Bruxelles',
+                'pays' => 'Belgique',
+                'continent_id' => '1'
+            ]);
     }
 }

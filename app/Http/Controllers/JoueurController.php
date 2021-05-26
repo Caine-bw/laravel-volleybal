@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipe;
 use App\Models\Joueur;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class JoueurController extends Controller
     public function index()
     {
         $joueurs = Joueur::all();
-        return view("backoffice.joueur.all",compact("joueurs"));
+        $equipes = Equipe::all();
+        return view("backoffice.joueur.all",compact("joueurs", "equipes"));
     }
 
     /**

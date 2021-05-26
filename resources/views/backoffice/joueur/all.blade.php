@@ -17,7 +17,7 @@
             <th scope="col">pays</th>
             <th scope="col">equipe</th>
             <th scope="col">role</th>
- 
+
           </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
         <td>{{ $joueur->age }}</td>
         <td>{{ $joueur->genre_id }}</td>
         <td>{{ $joueur->pays }}</td>
-        <td>{{ $joueur->equipe}}</td>
+        <td>{{ $joueur->equipe-> nom}}</td>
         <td>{{ $joueur->role -> nom }}</td>
         <td></td>
         <td>
