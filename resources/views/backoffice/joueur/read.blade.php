@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-center">
 
     <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{ asset("img/" . $joueur -> pdp) }}" alt="">
+        <img class="card-img-top" src="{{ asset("img/" . $joueur -> photo->image) }}" alt="">
         <div class="card-body">
           <h5 class="card-title">{{ $joueur->nom }}</h5>
           <h3 class="card-text">{{ $joueur->prenom }}</h3>

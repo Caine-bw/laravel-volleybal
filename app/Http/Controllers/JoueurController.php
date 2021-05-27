@@ -30,7 +30,10 @@ class JoueurController extends Controller
      */
     public function create()
     {
-        return view("backoffice.joueur.create");
+        $genres = Genre::all();
+        $roles = Role::all();
+        $equipes = Equipe::all();
+        return view("backoffice.joueur.create", compact("genres", "roles", "equipes"));
     }
 
     /**
@@ -46,14 +49,15 @@ class JoueurController extends Controller
         $joueur = new Joueur();
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
-        $joueur->email = $request->email;
         $joueur->age = $request->age;
+        $joueur->numero= $request->numero;
         $joueur->genre_id = $request->genre_id;
         $joueur->role_id = $request->role_id;
         $joueur->pays = $request->pays;
         $joueur->equipe_id = $request->equipe_id;
         $joueur->created_at = now();
         $joueur->updated_at = now();
+        $joueur->save();
         $photo-> image = $request->file('image')->hashName();
         $photo->joueur_id = $joueur->id;
         $request-> file("image")->storePublicly("img","public");
@@ -95,7 +99,9 @@ class JoueurController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
+        dd($joueur->photo);
         $photo = Photo::find($joueur->photo->id);
+        
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
         $joueur->email = $request->email;
@@ -104,15 +110,13 @@ class JoueurController extends Controller
         $joueur->role_id = $request->role_id;
         $joueur->pays = $request->pays;
         $joueur->updated_at = now();
+        $joueur->save();
         $photo-> image = $request->file('image')->hashName();
         $photo->joueur_id = $joueur->id;
         $request-> file("image")->storePublicly("img","public");
         $photo->save();
 
         
-
-        $joueur->save();
-
         return redirect()->route(("joueurs.index"));
     }
 

@@ -7,28 +7,29 @@
         @endforeach
     </ul>
 
-    <h2 class="text-center text-decoration-underline my-3">Créer un joueur</h2>
-    <form action="{{ route('joueurs.store') }}" method="post" enctype="multipart/form-data">
+    <h2 class="text-center text-decoration-underline my-3">Edit un joueur</h2>
+    <form action="{{ route('joueurs.update', $joueur->id) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('put')
         <div class="mb-3">
             <label class="form-label">Nom</label>
-            <input type="text" class="form-control" name="nom">
+            <input value="{{ $joueur->nom }}" type="text" class="form-control" name="nom">
         </div>
         <div class="mb-3">
             <label class="form-label">Prenom</label>
-            <input type="text" class="form-control" name="prenom">
+            <input value="{{ $joueur->prenom }}" type="text" class="form-control" name="prenom">
         </div>
         <div class="mb-3">
             <label class="form-label">Age</label>
-            <input type="text" class="form-control" name="age">
+            <input value="{{ $joueur->age }}" type="text" class="form-control" name="age">
         </div>
         <div class="mb-3">
             <label class="form-label">numero</label>
-             <input type="number" class="form-control" name="numero">
+             <input value="{{ $joueur->numero }}" type="number" class="form-control" name="numero">
         </div>
         <div class="mb-3">
             <label class="form-label">Pays</label>
-            <input type="text" class="form-control" name="pays">
+            <input value="{{ $joueur->pays }}" type="text" class="form-control" name="pays">
         </div>
         <div class="mb-3">
             <label class="form-label">Genre</label>
@@ -56,7 +57,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Photo</label>
-            <input type="file" class="form-control" name="image">
+            <input  type="file" class="form-control" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
