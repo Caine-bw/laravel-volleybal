@@ -26,7 +26,9 @@
        <div class="col-sm-4">
            <h2 class="text-white">Equipe Remplie</h2>
            <ul>
-       
+                @foreach ($equipes_remplies->shuffle() as $equipe)
+                    <li>{{ $equipe->nom }}</li>
+                @endforeach
             </ul>
            
        </div>

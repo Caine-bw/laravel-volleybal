@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JoueurController;
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-// Routes pour les joueurs 
+Route::get('/',[HomeController::class,"index"]);
+
 
 Route::resource("/joueurs",JoueurController::class);
 

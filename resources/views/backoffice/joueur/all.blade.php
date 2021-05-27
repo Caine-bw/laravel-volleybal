@@ -4,7 +4,7 @@
 
 
 <section>
-    <table class="table table-dark text-white">
+    <table class="table table-dark text-light">
         <thead>
           <tr>
             <th scope="col">#</th>
