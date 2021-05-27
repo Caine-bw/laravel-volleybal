@@ -4,18 +4,18 @@
 
 
 <section>
-    <table class="table table-dark">
+    <table class="table table-dark text-light">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Ville</th>
-            <th scope="col">Pays</th>
-            <th scope="col">ATT</th>
-            <th scope="col">CT</th>
-            <th scope="col">DC</th>
-            <th scope="col">RP</th>
-            <th scope="col">Continent</th>
+            <th class="text-light" scope="col">#</th>
+            <th class="text-light" scope="col">Nom</th>
+            <th class="text-light" scope="col">Ville</th>
+            <th class="text-light" scope="col">Pays</th>
+            <th class="text-light" scope="col">ATT</th>
+            <th class="text-light" scope="col">CT</th>
+            <th class="text-light" scope="col">DC</th>
+            <th class="text-light" scope="col">RP</th>
+            <th class="text-light" scope="col">Continent</th>
           </tr>
         </thead>
         <tbody>
@@ -43,8 +43,6 @@
               </div>
         </td>
       </tr>
-      
-
     @endforeach
         
         </tbody>

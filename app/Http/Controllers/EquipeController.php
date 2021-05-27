@@ -96,6 +96,10 @@ class EquipeController extends Controller
         $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
+        $equipe->ATT=$request->ATT;
+        $equipe->CT=$request->CT;
+        $equipe->DC=$request->DC;
+        $equipe->RP=$request->RP;
         $equipe->continent_id =$request->continent_id;
         $equipe->updated_at = now();    
         $equipe->save();

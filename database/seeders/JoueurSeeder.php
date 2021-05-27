@@ -23,6 +23,8 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 4,
             'equipe_id' => 5,
+            
+
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Zinedine',
@@ -33,6 +35,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 1,
             'equipe_id' => 5,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Marcq',
@@ -63,6 +66,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 3,
             'equipe_id' => 3,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Gangsta',
@@ -73,6 +77,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 3,
             'equipe_id' => 1,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Zabroska',
@@ -83,6 +88,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 2,
             'equipe_id' => 3,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Ponko',
@@ -93,6 +99,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 1,
             'equipe_id' => 1,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Tourkish',
@@ -103,6 +110,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 4,
             'equipe_id' => 2,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Shakira',
@@ -113,6 +121,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 4,
             'equipe_id' => 2,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Mecana',
@@ -123,6 +132,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 4,
             'equipe_id' => 2,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'moiaaa',
@@ -133,6 +143,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 1,
             'equipe_id' => 3,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Maria',
@@ -143,6 +154,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 2,
             'equipe_id' => 1,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Vladima',
@@ -153,6 +165,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 4,
             'equipe_id' => 2,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Villa',
@@ -163,6 +176,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 2,
             'role_id' => 1,
             'equipe_id' => 1,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Bolabola',
@@ -173,6 +187,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 4,
             'equipe_id' => 1,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Chkem',
@@ -183,6 +198,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 4,
             'equipe_id' => 4,
+            
         ]);
         DB::table('joueurs')->insert([
             'nom' => 'Ewamarche',
@@ -193,6 +209,7 @@ class JoueurSeeder extends Seeder
             'genre_id' => 1,
             'role_id' => 4,
             'equipe_id' => 2,
+            
         ]);
     }
 }
