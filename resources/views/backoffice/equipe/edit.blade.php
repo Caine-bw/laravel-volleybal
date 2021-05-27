@@ -44,5 +44,4 @@
              <input value="{{ $equipe->continent_id }}" type="number" class="form-control" name="continent_id">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-
 @endsection

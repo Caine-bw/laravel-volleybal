@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Continent;
 use App\Models\Equipe;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class EquipeController extends Controller
     public function index()
     {
         $equipes = Equipe::paginate(3);
+       
         return view('backoffice.equipe.all',compact('equipes'));
     }
 
@@ -25,7 +27,9 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        return view('backoffice.equipe.create');
+        $continents = Continent::all();
+        $equipes = Equipe::all();
+        return view('backoffice.equipe.create', compact('continents', 'equipes'));
     }
 
     /**
@@ -47,6 +51,10 @@ class EquipeController extends Controller
         $equipe->nom = $request->nom;
         $equipe->ville = $request->ville;
         $equipe->pays = $request->pays;
+        $equipe->ATT=$request->ATT;
+        $equipe->CT=$request->CT;
+        $equipe->DC=$request->DC;
+        $equipe->RP=$request->RP;
         $equipe->continent_id =$request->continent_id;
         $equipe->created_at = now();
         $equipe->updated_at = now();
@@ -116,6 +124,6 @@ class EquipeController extends Controller
     public function destroy(Equipe $equipe)
     {
         $equipe->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Vous avez supprimé une équipe.');
     }
 }

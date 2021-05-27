@@ -29,7 +29,7 @@
         <td>{{ $equipe->CT }}</td>
         <td>{{ $equipe->DC }}</td>
         <td>{{ $equipe->RP }}</td>
-        <td>{{ $equipe->continent_id }}</td>
+        <td>{{ $equipe->continent -> nom }}</td>
         <td></td>
         <td>
             <div class="d-flex">
@@ -44,8 +44,13 @@
         </td>
       </tr>
     @endforeach
-        
         </tbody>
       </table>
 </section>
+<div>
+  {{ $equipes->links() }}
+</div>
+<div class="d-flex justify-content-end me-2 ">
+        <a href={{ route("equipes.create") }} class=" btn btn-sm btn-secondary text-white"><i class="fas fa-user-plus"></i></a>
+</div>
 @endsection

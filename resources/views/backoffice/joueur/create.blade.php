@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
     <section class="container">
-        <h2 class="text-center my-4 bg-danger">Create user</h2>
+        <h2 class="text-center my-4 bg-danger">Create Joueur</h2>
         <ul>
           @foreach ($errors->all() as $message) 
               <li>{{ $message }}</li>
