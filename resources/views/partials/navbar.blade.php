@@ -1,5 +1,6 @@
 
 <div class="container my-4">
+    <nav> 
     <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
             <a class="nav-link " href="/">Welcome</a>
@@ -11,4 +12,5 @@
             <a class="nav-link" href="/equipes">Equipes</a>
         </li>
     </ul>
+    </nav>
 </div>
