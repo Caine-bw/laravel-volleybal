@@ -15,6 +15,7 @@ class PhotoSeeder extends Seeder
     public function run()
     {
         DB::table("photos")->insert([
+            // 'joueur_id'=>'1',
             'image'=>'une image ici'
         ]);
     }

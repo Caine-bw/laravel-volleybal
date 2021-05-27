@@ -99,12 +99,14 @@ class JoueurController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
-        dd($joueur->photo);
-        $photo = Photo::find($joueur->photo->id);
+        
+        // $photo = Photo::find($joueur->photo->id);
+
+        $photo = new Photo();
         
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
-        $joueur->email = $request->email;
+        // $joueur->email = $request->email;
         $joueur->age = $request->age;
         $joueur->genre_id = $request->genre_id;
         $joueur->role_id = $request->role_id;
