@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Equipe;
 use App\Models\Genre;
 use App\Models\Joueur;
+use App\Models\Photo;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -39,8 +40,26 @@ class JoueurController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
-        return view("backoffice.joueur.store");
+        $photo = new Photo();
+        $joueur = new Joueur();
+        $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->email = $request->email;
+        $joueur->age = $request->age;
+        $joueur->genre_id = $request->genre_id;
+        $joueur->role_id = $request->role_id;
+        $joueur->pays = $request->pays;
+        $joueur->equipe_id = $request->equipe_id;
+        $joueur->created_at = now();
+        $joueur->updated_at = now();
+        $photo-> image = $request->file('image')->hashName();
+        $photo->joueur_id = $joueur->id;
+        $request-> file("image")->storePublicly("img","public");
+        $photo->save();
+
+        return redirect()->route('joueurs.index')->with('message', 'Vous avez créé un.e joueur.e mec');
     }
     /**
      * Display the specified resource.
@@ -76,6 +95,7 @@ class JoueurController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
+        $photo = Photo::find($joueur->photo->id);
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
         $joueur->email = $request->email;
@@ -84,6 +104,12 @@ class JoueurController extends Controller
         $joueur->role_id = $request->role_id;
         $joueur->pays = $request->pays;
         $joueur->updated_at = now();
+        $photo-> image = $request->file('image')->hashName();
+        $photo->joueur_id = $joueur->id;
+        $request-> file("image")->storePublicly("img","public");
+        $photo->save();
+
+        
 
         $joueur->save();
 

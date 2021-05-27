@@ -12,7 +12,7 @@ class Joueur extends Model
     protected $table = 'joueurs';
 
     public function photo() {
-        return $this->belongsTo(Photo::class);
+        return $this->hasOne(Photo::class);
 
     }
 
