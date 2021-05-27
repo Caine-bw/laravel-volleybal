@@ -3,20 +3,25 @@
 @section('content')
 
 
+<<<<<<< HEAD
 <section>
     <table class="table table-dark text-light">
+=======
+<section class="container">
+    <table class="table table-dark text-white">
+>>>>>>> 689f76351706444196ca2a524b3b37c8eda63f38
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">nom</th>
-            <th scope="col">prenom</th>
-            <th scope="col">email</th>
-            <th scope="col">numero</th>
-            <th scope="col">age</th>
-            <th scope="col">genre</th>
-            <th scope="col">pays</th>
-            <th scope="col">equipe</th>
-            <th scope="col">role</th>
+            <th class="text-light" scope="col">#</th>
+            <th class="text-light" scope="col">nom</th>
+            <th class="text-light" scope="col">prenom</th>
+            <th class="text-light" scope="col">email</th>
+            <th class="text-light" scope="col">numero</th>
+            <th class="text-light" scope="col">age</th>
+            <th class="text-light" scope="col">genre</th>
+            <th class="text-light" scope="col">pays</th>
+            <th class="text-light" scope="col">equipe</th>
+            <th class="text-light" scope="col">role</th>
 
           </tr>
         </thead>
@@ -53,7 +58,7 @@
         </tbody>
       </table>
 </section>
-<div>
+<div class="ms-4 mt-2">
   {{ $joueurs->links() }}
 </div>
   <div class="d-flex justify-content-end me-2 ">

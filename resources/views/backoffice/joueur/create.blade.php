@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
-    <section class="container">
-        <h2 class="text-center my-4 bg-danger">Create Joueur</h2>
+    <section class="container text-light">
+        <h2 class="text-center my-4">Ajouter un Joueur</h2>
         <ul>
           @foreach ($errors->all() as $message) 
               <li>{{ $message }}</li>
@@ -57,7 +57,7 @@
               <label class="form-label">Photo de profil</label>
               <input type="file" class="form-control"  name="image">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-secondary text-light w-100 mb-3"><i class="fas fa-user-check"></i></button>
           </form>
     </section>
 @endsection

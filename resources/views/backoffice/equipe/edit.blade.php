@@ -1,13 +1,14 @@
 @extends('layout.app')
 
 @section('content')
+<section class="container text-light">
 <ul class="bg-danger rounded">
     @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
     @endforeach
 </ul>
 
-<h2 class="text-center text-decoration-underline my-3">Edit une Equipe</h2>
+<h2 class="text-center text-light text-decoration-underline my-3">Edit une Equipe</h2>
     <form action="{{ route('equipes.update', $equipe->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
@@ -43,5 +44,6 @@
             <label class="form-label">Continent</label>
              <input value="{{ $equipe->continent_id }}" type="number" class="form-control" name="continent_id">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-secondary text-white w-100"><i class="fas fa-arrow-alt-circle-left"></button>
+        </section>
 @endsection

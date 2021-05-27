@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
-
-    <ul class="bg-danger rounded">
+<section class="container text-light">
+    <ul class=" text-light">
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
         @endforeach
@@ -59,6 +59,7 @@
             <label class="form-label">Photo</label>
             <input  type="file" class="form-control" name="image">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-secondary text-light w-100 mb-3"><i class="fas fa-user-check"></i></button>
     </form>
+</section>
 @endsection
