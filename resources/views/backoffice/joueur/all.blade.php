@@ -4,7 +4,7 @@
 
 
 <section>
-    <table class="table table-dark">
+    <table class="table table-dark text-white">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -13,7 +13,7 @@
             <th scope="col">email</th>
             <th scope="col">numero</th>
             <th scope="col">age</th>
-            <th scope="col">genre_id</th>
+            <th scope="col">genre</th>
             <th scope="col">pays</th>
             <th scope="col">equipe</th>
             <th scope="col">role</th>
@@ -28,8 +28,8 @@
         <td>{{ $joueur->prenom }}</td>
         <td>{{ $joueur->email }}</td>
         <td>{{ $joueur->numero }}</td>
-        <td>{{ $joueur->age }}</td>
-        <td>{{ $joueur->genre_id }}</td>
+        <td>{{ $joueur->age }}</td> 
+        <td>{{ $joueur->genre -> type }}</td>
         <td>{{ $joueur->pays }}</td>
         <td>{{ $joueur->equipe-> nom}}</td>
         <td>{{ $joueur->role -> nom }}</td>
